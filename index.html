@@ -55,6 +55,7 @@
     margin: 1em 4em 1em 4em;
     }
   </style>
+  <link rel="stylesheet" href="css/prism.css" charset="utf-8">
 </head>
 <body>
 	<p align="center"><a href="https://raw.githubusercontent.com/worrydream/EarlyHistoryOfSmalltalk/master/SmalltalkHistoryHOPL-scanned-2015-07-16.pdf">original pdf</a> / <a href="https://github.com/worrydream/EarlyHistoryOfSmalltalk">make corrections</a></p>
@@ -1311,13 +1312,15 @@ to :robot 'pickup' :block
 		</p>
 		<table summary="receiver and message">
 			<tr><td><u>receiver</u></td><td><u>| message</u></td></tr>
-			<tr><td><code>c</code></td><td><code>| &#9675; i &lt;- d*e</code></td></tr>
+			<tr><td><code>c</code></td><td><code class="language-smalltalk">| &#9675; i &lt;- d*e</code></td></tr>
 		</table>
 		<p>
-		The c is bound to the receiving object, and <u>all</u> of <code>&#9675; i &lt;- d*e</code> is the message to it.  The message is made
+		The <code>c</code> is bound to the receiving object, and <u>all</u> of <code class="language-smalltalk">&#9675; i &lt;- d*e</code>
+    is the message to it.  The message is made
 		up of literal token "&#9675;", an expression to be evaluated in the sender's context (in this case i), another
 		literal token &lt;-, followed by an expression to be evaluated in the sender's context (d*e).  Since "LISP"
-		pairs are made from 2 element objects they can be indexed more simply: <code>c hd</code>, <code>c tl</code>, and <code>c hd &lt;- foo</code>, etc.
+		pairs are made from 2 element objects they can be indexed more simply: <code class="language-smalltalk">c hd</code>,
+    <code class="language-smalltalk">c tl</code>, and <code class="language-smalltalk">c hd &lt;- foo</code>, etc.
 		</p>
 		<p>
 		"Simple" expressions like <i>a+b</i> and <i>3+4</i> seemed more troublesome at first.  Did it really make sense
@@ -1325,8 +1328,8 @@ to :robot 'pickup' :block
 		</p>
 		<table summary="receiver and message">
 			<tr><td><u>receiver</u></td><td><u>| message</u></td></tr>
-			<tr><td><code>a</code></td><td><code>| + b</code></td></tr>
-			<tr><td><code>3</code></td><td><code>| + 4</code></td></tr>
+			<tr><td><code>a</code></td><td><code class="language-smalltalk">| + b</code></td></tr>
+			<tr><td><code>3</code></td><td><code class="language-smalltalk">| + 4</code></td></tr>
 		</table>
 		<p>
 		It seemed silly if only integers were considered, but there are many other metaphoric readings of
@@ -1354,11 +1357,11 @@ to :robot 'pickup' :block
 		produce an instance (a kind of closure) by using the object ISNEW.  Thus factorial could be written
 		"extensionally" as:
 		</p>
-			<p><code>to fact n (^if :n=0 then 1 else n*fact n-1)</code></p>
+			<p><code class="language-smalltalk">to fact n (^if :n=0 then 1 else n*fact n-1)</code></p>
 		<p>
 		or "intensionally," as part of class integer:
 		</p>
-			<p><code>(... &#9675;! &raquo; (^:n=1) &raquo; (1) (n-1)!)</code></p>
+			<p><code class="language-smalltalk">(... &#9675;! &raquo; (^:n=1) &raquo; (1) (n-1)!)</code></p>
 		<p>
 		Of course, the whole idea of Smalltalk (and OOP in general) is to define everything <i>intensionally</i>.
 		And this was the direction of movement as we learned how to program in the new style.  I never
@@ -1375,7 +1378,7 @@ to :robot 'pickup' :block
 
 <div style="border: 1px solid #808080; padding: 0.5em; margin: 0em 4em 0em 4em;">
 <p align="center">Proposed Smalltalk-72 Syntax</p>
-<pre><code>
+<pre><code class="language-smalltalk">
 Pair :h :t
     hd &lt;- :h
 	hd              &raquo; h
@@ -1575,7 +1578,7 @@ Pair :h :t
 		</p>
                 <br clear="all" >
 
-<pre class="rightcolumn"><code>
+<pre class="rightcolumn language-smalltalk"><code>
 (until Return or Delete do
     ('character &lt;- display &lt;- keyboard.
     character = ret &raquo; (Return)
@@ -2728,6 +2731,6 @@ ISNEW    &raquo;    (SELF undraw. 'size &lt;- size + :. SELF draw)</code></pre>
 		</p>
                 <a href="Images/byte.png" target="_blank"><img src="Images/thumbnails/byte.jpg" alt="Byte Magazine, August 1981" style="max-width: 281px"></a>
 
-
+    <script src="js/prism.js" charset="utf-8"></script>
 </body>
 </html>
