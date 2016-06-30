@@ -1757,12 +1757,12 @@ then case
 		animation.  After getting kids to guess what a box might be
 		like&mdash;they could come surprisingly close&mdash;they would be shown:
 		</p>
-		<pre><code>to box | x y size tilt
+		<pre><code class="language-smalltalk">to box | x y size tilt
 (&#9675;draw   &raquo;    (@place x y turn tilt. square size.
 &#9675;undraw  &raquo;    (@ white. SELF draw. @black)
-&#9675;turn    &raquo;    (SELF undraw. 'tilt &lt;- tilt + :. SELF draw)
-&#9675;grow    &raquo;    (SELF undraw. 'size &lt;- size + :. SELF draw)
-ISNEW    &raquo;    (SELF undraw. 'size &lt;- size + :. SELF draw)</code></pre>
+&#9675;turn    &raquo;    (SELF undraw. `tilt &lt;- tilt + :. SELF draw)
+&#9675;grow    &raquo;    (SELF undraw. `size &lt;- size + :. SELF draw)
+ISNEW    &raquo;    (SELF undraw. `size &lt;- size + :. SELF draw)</code></pre>
 		<p>
 		What was so wonderful about this idea were the myriad
 		of children's projects that could spring off the humble
